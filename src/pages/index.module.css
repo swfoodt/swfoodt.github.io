@@ -3,11 +3,23 @@
  * and scoped locally.
  */
 
+ @font-face {
+  font-family: Chengyu;
+  src: url(../../static/PaytoneOne-Regular.ttf);
+ }
+
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+  /* padding: 4rem 0; */
+  /* text-align: center; */
+  display: flex;
   position: relative;
   overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  background-image: url(https://api.maho.cc/random-img/pc.php);
+  background-size:cover;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 @media screen and (max-width: 996px) {
@@ -20,4 +32,77 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
+
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--ifm-background-color);
+  opacity: .5;
+  z-index: -3;
+  /*倒数第二层*/
+}
+
+
+
+/* From uiverse.io by @G4b413l */
+.scanner{
+  display: flex;
+  margin: 0 auto;
+  width: min-content;
+  transition: all 1s ease-in-out;
+}
+
+.scanner .s1 {
+  color: transparent;
+  font-size:90px;
+  position: relative;
+  overflow: hidden;
+  margin:0 auto;
+  width: 450px;
+  font-weight: 900;
+ }
+ 
+ .scanner .s1::before {
+  content: "swfoodt";
+  font-family: Chengyu;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-right: 4px solid var(--ifm-color-primary);
+  overflow: hidden;
+  color: var(--ifm-color-primary);
+  animation: load91371 3s linear infinite;
+ }
+ 
+ @keyframes load91371 {
+  0%, 10%, 100% {
+   width: 0;
+  }
+ 
+  10%,20%,30%,40%,50%,60%,70%,80%,90%,100% {
+   border-right-color: transparent;
+  }
+ 
+  11%,21%,31%,41%,51%,61%,71%,81%,91% {
+   border-right-color: var(--ifm-color-primary);
+  }
+ 
+  60%, 80% {
+   width:100%;
+  }
+ }
+
+ .tagline{
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 600;
+ }
