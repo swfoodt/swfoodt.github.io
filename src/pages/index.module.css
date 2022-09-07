@@ -41,7 +41,7 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-color: var(--ifm-background-color);
+  background-color: var(--ifm-navbar-background-color);
   opacity: .5;
   z-index: -3;
   /*倒数第二层*/
