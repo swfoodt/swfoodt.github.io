@@ -26,6 +26,14 @@ function HomepageHeader() {
   );
 }
 
+function Helo(){
+  return(
+    <div>
+      <div className='word'>Hello</div>
+    </div>
+  )
+}
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -35,6 +43,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <Helo/>
       </main>
     </Layout>
   );

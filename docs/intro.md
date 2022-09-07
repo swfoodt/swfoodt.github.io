@@ -45,3 +45,29 @@ The `cd` command changes the directory you're working with. In order to work wit
 The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
 
 Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+
+:::tip
+heuhwuru
+:::
+
+:::danger
+sss
+
+```js
+function()
+```
+:::
+
+## 二
+### 胡
+#### 胡
+
+- 废物合肥人
+- 二号位日日
+- 无法抗拒日日
+  - 好的u热负荷
+
+[baidu](/docs/tutorial-basics/create-a-page)
+
+![1.png](../static/img/Cylogo.png)
+[![vHB34g.png](https://s1.ax1x.com/2022/09/07/vHB34g.png)](https://imgse.com/i/vHB34g)

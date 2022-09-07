@@ -48,11 +48,20 @@ const config = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+          
         },
       }),
     ],
   ],
-
+  themes: [
+    [
+      //搜索插件
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -63,6 +72,10 @@ const config = {
           src: 'img/Cylogo.png',
         },
         items: [
+          {
+            type: "search",
+            position: "right",
+          },
           {
             type: 'doc',
             docId: 'intro',
