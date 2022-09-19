@@ -1,29 +1,67 @@
 import React from "react";
 import clsx from "clsx";
+import { Parallax } from "react-parallax";
+// import Parallax from "react-rellax";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
-
+// import backimg from "../../static/img/background/";
 import styles from "./index.module.css";
+// var rellax = new Rellax(".rellax");
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  var backNum = Math.ceil(Math.random() * 6);
+  var backs =
+    'url("../../static/img/background/indexbackground' + backNum + '.png")';
+  var backa = "../../static/img/background/indexbackground" + backNum + ".png";
+  var bb = "../../static/img/background/indexbackground1.png";
+  const divstyle = {
+    height: "100vh",
+    width: "100%",
+    // background: backs,
+    background: `url(${
+      require("../../static/img/background/indexbackground" + backNum + ".png")
+        .default
+    })`,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+  };
   return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
+    <header
+      className={clsx("hero hero--primary", styles.heroBanner)}
+      // style={{
+      //   height: "100vh",
+      //   width: "100%",
+      //   // background: backs,
+      //   backgroundImage: `url(${bb})`,
+      //   backgroundSize: "cover",
+      //   backgroundRepeat: "no-repeat",
+      // }}
+      style={divstyle}
+    >
       <div className="container">
         <div className={clsx("mask", styles.mask)}></div>
-        {/* <div className="loader"><p></p>{siteConfig.title}</div> */}
         <Helo />
-        <div className={styles.tagline}>{siteConfig.tagline}</div>
-        <div className={styles.buttons} style={{ zIndex: "1000" }}>
+        {/* <img
+          src={
+            require("../../static/img/background/indexbackground" +
+              bckpic +
+              ".png").default
+          }
+          alt="back"
+          className={clsx(styles.backimg)}
+        /> */}
+        {/* <div className={styles.tagline}>{siteConfig.tagline}</div>
+        <div className={styles.buttons}d style={{ zIndex: "1000" }}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
             Docusaurus Tutorial - 5min ⏱️
           </Link>
-        </div>
+        </div> */}
       </div>
     </header>
   );
@@ -31,10 +69,30 @@ function HomepageHeader() {
 
 function Helo() {
   return (
-    <div>
-      <div className={clsx("scanner", styles.scanner)}>
-        <div className={clsx("s1", styles.s1)}>Loading...</div>
-      </div>
+    <div className={clsx("mask ", styles.firstsawTitle)}>
+      <p className={clsx("Title", styles.Title)}>swfoodt</p>
+    </div>
+  );
+}
+
+function Satrs() {
+  return (
+    <div class="liuxin" style={{ width: "100vh", overflow: "hidden" }}>
+      <div class="meteor-1"></div>
+      <div class="meteor-2"></div>
+      <div class="meteor-3"></div>
+      <div class="meteor-4"></div>
+      <div class="meteor-5"></div>
+      <div class="meteor-6"></div>
+      <div class="meteor-7"></div>
+      <div class="meteor-8"></div>
+      <div class="meteor-9"></div>
+      <div class="meteor-10"></div>
+      <div class="meteor-11"></div>
+      <div class="meteor-12"></div>
+      <div class="meteor-13"></div>
+      <div class="meteor-14"></div>
+      <div class="meteor-15"></div>
     </div>
   );
 }
@@ -49,7 +107,8 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
-        <Helo />
+
+        <Satrs />
       </main>
     </Layout>
   );

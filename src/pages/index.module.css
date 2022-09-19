@@ -2,24 +2,36 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
+body {
+  overflow-x: hidden !important;
+}
 
- @font-face {
-  font-family: Chengyu;
-  src: url(../../static/PaytoneOne-Regular.ttf);
- }
+:root {
+  --backimg: url(../../static/img/background/indexbackground1.png);
+}
+
+@font-face {
+  font-family: HelloType;
+  src: url(../../static/Shojumaru-Regular.ttf);
+}
+
+@font-face {
+  font-family: logoSide;
+  src: url(../../static/PoiretOne-Regular.ttf);
+}
 
 .heroBanner {
-  /* padding: 4rem 0; */
-  /* text-align: center; */
+  /* padding: 4rem 0; 
+   text-align: center;
   display: flex;
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   background-image: url(https://api.maho.cc/random-img/pc.php);
-  background-size:cover;
-  background-repeat: no-repeat;
-  z-index: 0;
+  background-image: var(--backimg);
+
+  z-index: 0; */
 }
 
 @media screen and (max-width: 996px) {
@@ -42,15 +54,64 @@
   top: 0;
   left: 0;
   background-color: var(--ifm-navbar-background-color);
-  opacity: .5;
+  opacity: 0.3;
   z-index: -3;
   /*倒数第二层*/
 }
 
+.firstsawTitle {
+  position:relative;
+  display: flex;
+  margin: 0 auto;
+  width: min-content;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
 
+.Title {
+  margin: 0 auto;
+  font-size: 90px;
+  /* color: var(--ifm-color-primary); */
+  background-image: linear-gradient(to right, orange, purple);
+  font-family: HelloType;
+  animation: swing 10s infinite;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0 auto;
+  /* backdrop-filter: blur(4px); */
+}
+
+@keyframes swing {
+  /*创建动画*/
+  20% {
+    transform: rotate(1deg);
+  }
+  40% {
+    transform: rotate(-1deg);
+  }
+  60% {
+    transform: rotate(1deg);
+  }
+  80% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+  .Title {
+    font-size: 50px;
+  }
+}
 
 /* From uiverse.io by @G4b413l */
-.scanner{
+/* .scanner{
   display: flex;
   margin: 0 auto;
   width: min-content;
@@ -69,7 +130,7 @@
  
  .scanner .s1::before {
   content: "swfoodt";
-  font-family: Chengyu;
+  font-family: logoSide;
   position: absolute;
   top: 0;
   left: 0;
@@ -97,12 +158,22 @@
   60%, 80% {
    width:100%;
   }
- }
+ } */
 
- .tagline{
+.tagline {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 5px;
   font-size: 20px;
   font-weight: 600;
- }
+}
+
+.backimg {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  /* width: 100vh; */
+  height: 100vh;
+  z-index: -1;
+  /* height: 100%; */
+}

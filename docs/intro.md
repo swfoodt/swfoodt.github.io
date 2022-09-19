@@ -1,73 +1,41 @@
 ---
 sidebar_position: 1
+title: 这里有些什么
 ---
 
-# Tutorial Intro
+## 前端学习记录
 
-Let's discover **Docusaurus in less than 5 minutes**.
+博主一般不做学习笔记，主要是没有看笔记的习惯，记两页之后就放在角落里吃灰。
+但是大学的学习过于碎片化，如果学过的知识不常用，遗忘的很快。所以准备将学习过程记录在这里。
 
-## Getting Started
-
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+并且最近准备按照前端学习路线重新建立知识体系，尽可能地在原有的知识上深入一些。
 
 :::tip
-heuhwuru
+
+所选择的前端学习的次序是根据 GitHub 上 `Kamran Ahmed` 所提供的 [前端学习路线](https://roadmap.sh/frontend)。
+
 :::
 
-:::danger
-sss
+## 菜谱记录
 
-```js
-function()
-```
+有时间的话会把自己感觉不错的菜谱记录下来，或者开发一些**有点意思**的菜谱。
+
+不过现在住在宿舍里是暂时没有这个条件的，更新事宜只能再议。
+
+:::caution
+
+个人不保证菜谱的可食用性，仅作为记录，**_请不要盲目模仿_** 以导致意料不到的后果。
+
 :::
 
-## 二
-### 胡
-#### 胡
-
+<!-- ```
 - 废物合肥人
 - 二号位日日
 - 无法抗拒日日
-  - 好的u热负荷
+  - 好的 u 热负荷
+```
 
 [baidu](/docs/tutorial-basics/create-a-page)
 
 ![1.png](../static/img/Cylogo.png)
-[![vHB34g.png](https://s1.ax1x.com/2022/09/07/vHB34g.png)](https://imgse.com/i/vHB34g)
+[![vHB34g.png](https://s1.ax1x.com/2022/09/07/vHB34g.png)](https://imgse.com/i/vHB34g) -->
