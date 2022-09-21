@@ -49,9 +49,9 @@ body{
   color: aqua;
 }
 
-.alert{
+/* .alert{
   border: 3px solid var(--ifm-alert-border-color) !important;
-}
+} */
 
 ::-webkit-scrollbar {
   width: 5px;
