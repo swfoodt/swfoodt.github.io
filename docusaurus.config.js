@@ -79,9 +79,9 @@ const config = {
             type: "doc",
             docId: "intro",
             position: "right",
-            label: "Document",
+            label: "文档",
           },
-          { to: "/blog", label: "Blog", position: "right" },
+          { to: "/blog", label: "博客", position: "right" },
           {
             href: "https://github.com/facebook/docusaurus",
             label: "GitHub",
@@ -93,11 +93,15 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "Resources",
             items: [
               {
-                label: "介绍",
+                label: "文档",
                 to: "/docs/intro",
+              },
+              {
+                label: "博客",
+                to: "/blog",
               },
             ],
           },
