@@ -21,6 +21,7 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-navbar-background-color: rgba(255, 255, 255, 0.264);
+  --maincolor: rgba(255, 255, 255, 0.886);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -34,6 +35,7 @@
   --ifm-color-primary-lightest: #a6e4e8;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-navbar-background-color: rgba(0, 0, 0, 0.264);
+  --maincolor: rgba(0, 0, 0, 0.699);
 }
 
 body{
@@ -52,6 +54,23 @@ body{
 /* .alert{
   border: 3px solid var(--ifm-alert-border-color) !important;
 } */
+.navbar-sidebar__backdrop{
+  height: 100vh !important;
+}
+
+
+.navbar-sidebar__item.menu{
+  background-color: var(--maincolor);
+}
+
+.navbar-sidebar__brand{
+  background-color: var(--maincolor);
+}
+
+.navbar-sidebar--show .navbar-sidebar ,.navbar-sidebar--show .navbar-sidebar{
+  height: 100vh !important;
+  background-color: var(--ifm-navbar-background-color);
+} 
 
 ::-webkit-scrollbar {
   width: 5px;
