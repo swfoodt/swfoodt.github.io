@@ -63,28 +63,22 @@ export default function HomepageFeatures() {
 
 const CardsdList = [
   {
-    Title: "文档",
+    Title: "Document",
     Subtitle: "-->",
     Herf: "docs/intro",
     Description: <>里面有些尽可能严谨的学习记录，还有些不太严谨的菜谱...</>,
   },
   {
-    Title: "博客",
+    Title: "Blog",
     Subtitle: "-->",
     Herf: "blog",
-    Description: (
-      <>
-        里面有些暂时不存在的文章，未来可能会有，也可能不会有，或许会有，大概率不会没有...
-      </>
-    ),
+    Description: <>里面有些暂时不存在的文章，主要是因为肚子里没货可写...</>,
   },
   {
     Title: "Github",
     Subtitle: "-->",
     Herf: "https://github.com/swfoodt",
-    Description: (
-      <>个人在GitHub没啥贡献，暂时也就这个网站，放在这里是为了看起来美观...</>
-    ),
+    Description: <>个人在GitHub暂时没啥贡献，放在这里是为了看起来美观...</>,
   },
 ];
 
@@ -95,62 +89,52 @@ function Cards({ Title, Subtitle, Herf, Description }) {
         <div className={styles.content}>
           <div className={styles.front}>
             <h3 className={styles.title}>{Title}</h3>
-            {/* <p className={styles.subtitle}></p> */}
-            <a className={styles.subtitle} href={Herf}>
-              {Subtitle}
-            </a>
+
+            <button className={styles.cardbtm} href={Herf}>
+              <a className={styles.subtitle} href={Herf}>
+                <p>Check it out</p>
+              </a>
+              <svg
+                stroke-width="4"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </button>
           </div>
 
           <div className={styles.back}>
             <p className={styles.description}>{Description}</p>
-            <a className={styles.subtitle} href={Herf}>
-              {Subtitle}
-            </a>
+            <button className={styles.cardbtm}>
+              <a className={styles.subtitle} href={Herf}>
+                <p>Check it out</p>
+              </a>
+              <svg
+                stroke-width="4"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="h-6 w-6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-// function Cards_2() {
-//   return (
-//     <div className={clsx("col col--4")}>
-//       <div className={styles.card}>
-//         <div className={styles.content}>
-//           <div className={styles.front}>
-//             <h3 className={styles.title}>博客</h3>
-//             <p className={styles.subtitle}>go</p>
-//           </div>
-
-//           <div className={styles.back}>
-//             <p className={styles.description}>
-//               Cool description so you can read it too my friend
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// function Cards_3() {
-//   return (
-//     <div className={clsx("col col--4")}>
-//       <div className={styles.card}>
-//         <div className={styles.content}>
-//           <div className={styles.front}>
-//             <h3 className={styles.title}>GitHub</h3>
-//             <p className={styles.subtitle}>go</p>
-//           </div>
-
-//           <div className={styles.back}>
-//             <p className={styles.description}>
-//               Cool description so you can read it too my friend
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
