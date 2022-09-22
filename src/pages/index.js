@@ -31,14 +31,6 @@ function HomepageHeader() {
   return (
     <header
       className={clsx("hero hero--primary", styles.heroBanner)}
-      // style={{
-      //   height: "100vh",
-      //   width: "100%",
-      //   // background: backs,
-      //   backgroundImage: `url(${bb})`,
-      //   backgroundSize: "cover",
-      //   backgroundRepeat: "no-repeat",
-      // }}
       style={divstyle}
     >
       <div className="container">

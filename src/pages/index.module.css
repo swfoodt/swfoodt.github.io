@@ -20,8 +20,8 @@ body {
   src: url(../../static/PoiretOne-Regular.ttf);
 }
 
-.heroBanner {
-  /* padding: 4rem 0; 
+/* .heroBanner {
+  padding: 4rem 0; 
    text-align: center;
   display: flex;
   position: relative;
@@ -31,8 +31,8 @@ body {
   background-image: url(https://api.maho.cc/random-img/pc.php);
   background-image: var(--backimg);
 
-  z-index: 0; */
-}
+  z-index: 0;
+} */
 
 @media screen and (max-width: 996px) {
   .heroBanner {
@@ -76,7 +76,7 @@ body {
   background-image: linear-gradient(to right, orange, purple);
   font-family: HelloType;
   animation: swing 10s infinite;
-  -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   margin: 0 auto;
   /* backdrop-filter: blur(4px); */

@@ -22,6 +22,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-navbar-background-color: rgba(255, 255, 255, 0.264);
   --maincolor: rgba(255, 255, 255, 0.886);
+  --maincolor-none-opacity: rgba(255, 255, 255, 1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -36,6 +37,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
   --ifm-navbar-background-color: rgba(0, 0, 0, 0.264);
   --maincolor: rgba(0, 0, 0, 0.699);
+  --maincolor-none-opacity: rgb(26, 26, 26);
 }
 
 body{

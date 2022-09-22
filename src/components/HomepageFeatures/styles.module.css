@@ -9,3 +9,84 @@
   height: 200px;
   width: 200px;
 }
+
+
+/* From uiverse.io by @JoseIsra */
+.card {
+  width: 18rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.content {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transition: all 2.25s;
+  background-color: var(--maincolor-none-opacity);
+  padding: 5em;
+  transform-style: preserve-3d;
+  border-radius: 1em;
+  box-shadow: 0 0 8px 6px var(--maincolor-none-opacity); 
+}
+
+.card:hover .content {
+  transform: rotateY(0.5turn);
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 16px;
+  padding: 2em;
+  border-radius: 1em;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.title {
+  transform: translateZ(5rem);
+  font-size: 2rem;
+}
+
+.subtitle {
+  transform: translateZ(2rem);
+}
+
+.back {
+  transform: rotateY(0.5turn);
+  background-color: var(--maincolor-none-opacity);
+}
+
+.description {
+  transform: translateZ(3rem);
+}
+/* From uiverse.io by @JoseIsra */
+
+.row{
+  /* 让元素宽度占满屏幕 */
+  width: 100%;
+  /* 让元素高度自适应 */
+  height: auto;
+  /* 让元素水平居中 */
+  margin: 0 auto;
+  /* 让子元平均分布在一行 */
+  display: flex;
+  justify-content: space-around;
+  /* 让子元素垂直居中 */
+  align-items: center;
+  /* 让子元素自动换行 */
+  flex-wrap: wrap;
+}
+
+.title ,.subtitle,.description{
+  font-family: fangsong;
+}

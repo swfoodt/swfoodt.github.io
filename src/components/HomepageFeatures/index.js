@@ -2,38 +2,34 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
-const FeatureList = [
-  {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: "Powered by React",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
+// const FeatureList = [
+//   {
+//     title: "Easy to Use",
+//     Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+//     description: (
+//       <>Docusaurus was designed from the ground up to be easily installed and</>
+//     ),
+//   },
+//   {
+//     title: "Focus on What Matters",
+//     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+//     description: (
+//       <>
+//         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
+//       </>
+//     ),
+//   },
+//   {
+//     title: "Powered by React",
+//     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+//     description: (
+//       <>
+//         Extend or customize your website layout by reusing React. Docusaurus can
+//         be extended while reusing the same header and footer.
+//       </>
+//     ),
+//   },
+// ];
 
 function Feature({ Svg, title, description }) {
   return (
@@ -53,12 +49,108 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+        <div className={styles.row}>
+          {CardsdList.map((props, idx) => (
+            <div>
+              <Cards key={idx} {...props} />
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
 }
+
+const CardsdList = [
+  {
+    Title: "文档",
+    Subtitle: "-->",
+    Herf: "docs/intro",
+    Description: <>里面有些尽可能严谨的学习记录，还有些不太严谨的菜谱...</>,
+  },
+  {
+    Title: "博客",
+    Subtitle: "-->",
+    Herf: "blog",
+    Description: (
+      <>
+        里面有些暂时不存在的文章，未来可能会有，也可能不会有，或许会有，大概率不会没有...
+      </>
+    ),
+  },
+  {
+    Title: "Github",
+    Subtitle: "-->",
+    Herf: "https://github.com/swfoodt",
+    Description: (
+      <>个人在GitHub没啥贡献，暂时也就这个网站，放在这里是为了看起来美观...</>
+    ),
+  },
+];
+
+function Cards({ Title, Subtitle, Herf, Description }) {
+  return (
+    <div className={clsx("col col--4")}>
+      <div className={styles.card}>
+        <div className={styles.content}>
+          <div className={styles.front}>
+            <h3 className={styles.title}>{Title}</h3>
+            {/* <p className={styles.subtitle}></p> */}
+            <a className={styles.subtitle} href={Herf}>
+              {Subtitle}
+            </a>
+          </div>
+
+          <div className={styles.back}>
+            <p className={styles.description}>{Description}</p>
+            <a className={styles.subtitle} href={Herf}>
+              {Subtitle}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// function Cards_2() {
+//   return (
+//     <div className={clsx("col col--4")}>
+//       <div className={styles.card}>
+//         <div className={styles.content}>
+//           <div className={styles.front}>
+//             <h3 className={styles.title}>博客</h3>
+//             <p className={styles.subtitle}>go</p>
+//           </div>
+
+//           <div className={styles.back}>
+//             <p className={styles.description}>
+//               Cool description so you can read it too my friend
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// function Cards_3() {
+//   return (
+//     <div className={clsx("col col--4")}>
+//       <div className={styles.card}>
+//         <div className={styles.content}>
+//           <div className={styles.front}>
+//             <h3 className={styles.title}>GitHub</h3>
+//             <p className={styles.subtitle}>go</p>
+//           </div>
+
+//           <div className={styles.back}>
+//             <p className={styles.description}>
+//               Cool description so you can read it too my friend
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
