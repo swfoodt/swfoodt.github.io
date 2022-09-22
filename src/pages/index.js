@@ -14,17 +14,18 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   var backNum = Math.ceil(Math.random() * 6);
   var backs =
-    'url("../../static/img/background/indexbackground' + backNum + '.png")';
-  var backa = "../../static/img/background/indexbackground" + backNum + ".png";
-  var bb = "../../static/img/background/indexbackground1.png";
+    'url("https://swfoodt-blog.oss-cn-beijing.aliyuncs.com/img/indexbackground' +
+    backNum +
+    '.png")';
   const divstyle = {
     height: "100vh",
     width: "100%",
     // background: backs,
-    background: `url(${
-      require("../../static/img/background/indexbackground" + backNum + ".png")
-        .default
-    })`,
+    // background: `url(${
+    //   require("../../static/img/background/indexbackground" + backNum + ".png")
+    //     .default
+    // })`,
+    background: backs,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
   };
