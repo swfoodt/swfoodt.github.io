@@ -12,9 +12,9 @@ import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  var backNum = Math.ceil(Math.random() * 6);
+  var backNum = Math.ceil(Math.random() * 10);
   var backs =
-    'url("https://swfoodt-blog.oss-cn-beijing.aliyuncs.com/img/indexbackground' +
+    'url("https://swfoodt-blog.oss-cn-beijing.aliyuncs.com/img/bg/indexbackground' +
     backNum +
     '.png")';
   const divstyle = {
