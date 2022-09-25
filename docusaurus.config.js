@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "CYwal",
   tagline: "活着是火，死了是烟，这里写着一些尘埃。",
-  url: "https://cywal.netlify.app",
+  url: "https://swfoodt.netlify.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -65,7 +65,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "CYwal",
+        title: "Swfoodt",
         logo: {
           alt: "Cy Logo",
           src: "img/Cylogo.png",
@@ -83,7 +83,7 @@ const config = {
           },
           { to: "/blog", label: "博客", position: "right" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/swfoodt",
             label: "GitHub",
             position: "right",
           },
@@ -131,7 +131,7 @@ const config = {
               },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/swfoodt",
               },
             ],
           },
