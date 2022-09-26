@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "CYwal",
+  title: "swfoodt",
   tagline: "活着是火，死了是烟，这里写着一些尘埃。",
   url: "https://swfoodt.netlify.app",
   baseUrl: "/",

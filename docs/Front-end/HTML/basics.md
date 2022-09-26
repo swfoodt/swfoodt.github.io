@@ -51,7 +51,7 @@ HTML 标签通常是成对出现的，比如 `<head>` 和 `</head>`，`<title>` 
 `<a>` 标签的 `href` 属性指定了链接的地址，`<img>` 标签的 `src` 属性指定了图片的地址。
 
 ```html title="<a>的href属性"
-<a href="https://cywal.netlify.app">This is a link</a>
+<a href="https://swfoodt.netlify.app">This is a link</a>
 ```
 
 :::info HTML

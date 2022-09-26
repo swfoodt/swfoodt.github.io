@@ -75,7 +75,7 @@ body {
   /* color: var(--ifm-color-primary); */
   background-image: linear-gradient(to right, orange, purple);
   font-family: HelloType;
-  animation: swing 10s infinite;
+  animation: swing 5s infinite;
   background-clip: text;
   color: transparent;
   margin: 0 auto;
