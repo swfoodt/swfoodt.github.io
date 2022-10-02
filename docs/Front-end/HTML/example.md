@@ -5,7 +5,7 @@ title: HTML部分样例
 
 ## 说了些枯燥的定义，所以 html 具体可以做到什么呢？
 
-### 1. 用各种标签写一段话
+### 用各种标签写一段话
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -110,6 +110,6 @@ import CodeBlock from '@theme/CodeBlock';
 
 :::info 速查列表
 
-日常使用可以参考`菜鸟教程`提供的[速查列表](https://www.runoob.com/tags/html-reference.html)。
+日常使用可以参考`w3school`提供的[速查手册](https://www.w3school.com.cn/html/html_quick.asp)。
 
 :::
