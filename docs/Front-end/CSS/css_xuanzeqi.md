@@ -59,8 +59,8 @@ id 是唯一的，所以一个页面中只能有一个 id 为 title 的元素。
 
 - **css 后代选择器**用来选中 html 中的后代元素，比如 div p、div .title 等等。
 
-```css title="改变所有 div 的后代元素的字体颜色为红色"
-div * {
+```css title="改变所有 div 的后代 p 元素的字体颜色为红色"
+div p {
   color: red;
 }
 ```
