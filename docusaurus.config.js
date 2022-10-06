@@ -64,6 +64,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      metadata: [
+        { name: "msvalidate.01", content: "44CBC87735CC60E98C2FF0423A7B618E" },
+      ],
       navbar: {
         title: "Swfoodt",
         logo: {
