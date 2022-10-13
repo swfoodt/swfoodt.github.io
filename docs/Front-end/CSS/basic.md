@@ -1,11 +1,45 @@
 ---
 sidebar_position: 1
-title: css基础
+title: css书写顺序
 ---
 
-## css 基本知识
+- **css 书写顺序**：布局定位属性 > 自身样式 > 文本样式 > 其他样式。
 
-- css 是层叠样式表，用来控制网页的样式，比如字体大小、颜色、背景颜色、边框、位置等等。
+- 注重 css 书写顺序可以减少浏览器 reflow，提高浏览器渲染性能。
+
+样例：
+
+```css
+.box {
+  /* 布局定位属性 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* 自身样式 */
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #000;
+  background: #fff;
+  /* 文本样式 */
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  /* 其他样式 */
+  cursor: pointer;
+  opacity: 1;
+}
+```
+
+<!-- - css 是层叠样式表，用来控制网页的样式，比如字体大小、颜色、背景颜色、边框、位置等等。
 
 - css 由选择器和声明组成，选择器用来选中 html 中的元素，声明用来设置元素的样式。
 
@@ -35,4 +69,4 @@ title: css基础
 
 ### css 常用动画方式
 
-- css 常用动画方式有 transition、animation 等等。
+- css 常用动画方式有 transition、animation 等等。 -->

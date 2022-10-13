@@ -46,6 +46,10 @@ body{
   overflow-x: hidden !important;
 }
 
+.markdown strong{
+  color: var(--ifm-color-primary-lightest);
+}
+
 .navbar{
   backdrop-filter: blur(70px);
 }
