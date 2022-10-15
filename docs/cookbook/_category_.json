@@ -1,7 +1,8 @@
 {
-  "label": "菜谱",
+  "label": "cy和朋友们的菜谱",
   "position": 3,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "菜谱征集中，不管是拿手菜，还是奇思妙想（能不能吃都可以），欢迎投稿在网站邮箱：swfodt@163.com 。"
   }
 }
