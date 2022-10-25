@@ -80,3 +80,69 @@ title: css显示与定位
   overflow: hidden;
 }
 ```
+
+## position 定位
+
+### position: static
+
+- **`position: static`** 是默认值，元素使用文档流定位，`top` / `right` 等参数不生效。
+
+### position: relative
+
+- **`position: relative`** 相对定位，相对于**自身原来的位置**进行定位，**不会脱离文档流**。
+
+### position: absolute
+
+- **`position: absolute`** 绝对定位，相对于**最近的非 static 定位祖先元素**进行定位，**脱离文档流**。
+
+- 若父元素都没有设置非 static 定位，那么就相对于**浏览器窗口**进行定位。
+
+- 子绝父相，子绝父绝，子绝父固定。
+
+:::info 居中
+
+- 绝对定位的盒子无法使用 `margin auto` 实现盒子的居中效果,解决方法：
+
+```css
+
+//水平居中 left设为一半，margin-left设为宽度一半
+div{
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px
+  height: 200px;
+}
+
+//或使用transform
+div{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px
+  height: 200px;
+}
+
+```
+
+:::
+
+### position: fixed
+
+- **`position: fixed`** 固定定位，相对于**浏览器窗口**进行定位，**脱离文档流**。
+
+- 固定定位的元素会随着页面的滚动而滚动，不会随着页面的滚动而滚动。
+
+## 元素的层级关系
+
+- **层级关系** 是指元素在页面中的显示顺序，层级关系的元素会覆盖住其他元素。
+
+- **标准流 < 浮动 < 定位 < z-index**
+
+:::tip z-index
+
+- z-index 只对定位的元素有效，z-index 的值越大，层级越高。默认值为 0。
+
+:::
+
+- 当两个元素的**层级关系相同**时，后面的元素会覆盖前面的元素。

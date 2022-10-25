@@ -20,11 +20,6 @@ function HomepageHeader() {
   const divstyle = {
     height: "100vh",
     width: "100%",
-    // background: backs,
-    // background: `url(${
-    //   require("../../static/img/background/indexbackground" + backNum + ".png")
-    //     .default
-    // })`,
     background: backs,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -37,24 +32,6 @@ function HomepageHeader() {
       <div className="container">
         <div className={clsx("mask", styles.mask)}></div>
         <Helo />
-        {/* <img
-          src={
-            require("../../static/img/background/indexbackground" +
-              bckpic +
-              ".png").default
-          }
-          alt="back"
-          className={clsx(styles.backimg)}
-        /> */}
-        {/* <div className={styles.tagline}>{siteConfig.tagline}</div>
-        <div className={styles.buttons}d style={{ zIndex: "1000" }}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div> */}
       </div>
     </header>
   );

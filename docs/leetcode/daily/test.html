@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    /**
+     * @param {number[][]} grid
+     * @return {number}
+     */
+
+
+    var shortestBridge = function (grid) {
+        let edge = grid.length; // 水域的边界
+        let island = []; // 存放岛的数组
+        let queue = []; //存放待搜查的点的队列
+        let qlen; //队列的长度
+        let help = [
+            [1, 0],
+            [-1, 0],
+            [0, 1],
+            [0, -1],
+        ]; //帮助我们找到周围的点的数组
+        let step = 0; //步数
+
+        for (let i = 0; i < edge; i++) {
+            for (let j = 0; j < edge; j++) {
+                if (grid[i][j] === 1) {
+                    grid[i][j] = 2; //将找到的岛的点标记为2，以防止重复搜索
+                    qlen = queue.push([i, j]); //排队等待搜查
+                    while (qlen != 0); //若全搜查完毕就跳出循环
+                    {
+                        let check = queue.shift(); //取出排在最前面的点
+                        qlen--
+                        let x = check[0];
+                        let y = check[1]; //保存
+                        island.push(check); //放入岛的数组中
+                        for (let k = 0; k < 4; k++) {
+                            //四次循环找上下左右的邻居
+                            let nbx = x + help[k][0];
+                            let nby = y + help[k][1]; //找到邻居的坐标
+                            //判断邻居是否在水域内，且是否为岛
+                            if (
+                                nbx >= 0 &&
+                                nby >= 0 &&
+                                nbx < edge &&
+                                nby < edge &&
+                                grid[nbx][nby] === 1
+                            ) {
+                                queue.push([nbx, nby]); //如果是就让去排队等待检查
+                                qlen++
+                                grid[nbx][nby] = 2; //改变标记
+                            }
+                        }
+                    }
+
+
+
+
+
+                    // grid[i][j] = 2; //将找到的岛的点标记为2，以防止重复搜索
+                    // qlen = queue.push([i, j]); //排队等待搜查
+                    // while (qlen != 0); //若全搜查完毕就跳出循环
+                    // {
+                    //     let check = queue.shift(); //取出排在最前面的点
+                    //     qlen--
+                    //     let x = check[0];
+                    //     let y = check[1]; //保存
+                    //     island.push(check); //放入岛的数组中
+                    //     for (let k = 0; k < 4; k++) {
+                    //         //四次循环找上下左右的邻居
+                    //         let nbx = x + help[k][0];
+                    //         let nby = y + help[k][1]; //找到邻居的坐标
+                    //         //判断邻居是否在水域内，且是否为岛
+                    //         if (
+                    //             nbx >= 0 &&
+                    //             nby >= 0 &&
+                    //             nbx < edge &&
+                    //             nby < edge &&
+                    //             grid[nbx][nby] === 1
+                    //         ) {
+                    //             queue.push([nbx, nby]); //如果是就让去排队等待检查
+                    //             qlen++
+                    //             grid[nbx][nby] = 2; //改变标记
+                    //         }
+                    //     }
+                    // }
+                    for (let n of island) {
+                        queue.push(n); //将岛的所有点都放入队列中
+                    }
+                    while (queue.length != 0) {
+                        //开始第二次广度优先搜索
+                        //在每一轮的扩张中队列的长度是不变的，新增的点需要在下一轮扩张中被检查
+                        let qlen = queue.length;
+                        for (let k = 0; k < qlen; k++) {
+                            //每一轮扩张
+                            let check = queue.shift();
+                            let x = check[0];
+                            let y = check[1];
+                            for (let l = 0; l < 4; l++) {
+                                //四次循环找上下左右的邻居
+                                let nbx = x + help[l][0];
+                                let nby = y + help[l][1];
+                                if (nbx >= 0 && nby >= 0 && nbx < edge && nby < edge) {
+                                    if (grid[nbx][nby] === 1) {
+                                        //如果找到岛，直接返回次数
+                                        console.log(step + "===")
+                                        return step;
+                                    } else if (grid[nbx][nby] === 0) {
+                                        //如果是水域，就将它划入岛的范围内
+                                        queue.push([nbx, nby]);
+                                        grid[nbx][nby] = 2;
+                                    }
+                                }
+                            }
+                        }
+                        step++; //每一轮扩张结束后步数加一
+                    }
+                }
+            }
+        }
+    };
+
+    shortestBridge(
+        [
+            [0, 1, 0],
+            [0, 0, 0],
+            [0, 0, 1]
+        ]);
+</script>
+
+</html>
