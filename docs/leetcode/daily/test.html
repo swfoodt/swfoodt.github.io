@@ -6,136 +6,125 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #canvas {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
 
-</body>
+    <canvas id="canvas" width="600" height="600" />
 
-<script>
-    /**
-     * @param {number[][]} grid
-     * @return {number}
-     */
+    <script>
+        let grid_width = 12; // 一个结点的宽度
+        let canvas = document.getElementById('canvas')
+        let ctx = canvas.getContext('2d');
+        let originColor = 'coral'; // 搜索源点颜色
+        let targetColor = 'cornflowerblue'; // 被搜索点颜色
+        let visitedColor = 'rgb(255, 149, 142)'; // 已经遍历过的点的元素
+        let dataWidth = 50; // 画板矩阵一行或者一列的点数
+        let landSize = 5; // 源点个数
+        let interval = 1000;
+        let flag = 0;
 
 
-    var shortestBridge = function (grid) {
-        let edge = grid.length; // 水域的边界
-        let island = []; // 存放岛的数组
-        let queue = []; //存放待搜查的点的队列
-        let qlen; //队列的长度
-        let help = [
-            [1, 0],
-            [-1, 0],
-            [0, 1],
-            [0, -1],
-        ]; //帮助我们找到周围的点的数组
-        let step = 0; //步数
+        // 0表示待搜索的点，1表示源点，用2 表示已经访问过的点
+        let grid = Array.from({
+            length: dataWidth
+        }, () => Array.from({
+            length: dataWidth
+        }, () => 0))
 
-        for (let i = 0; i < edge; i++) {
-            for (let j = 0; j < edge; j++) {
-                if (grid[i][j] === 1) {
-                    grid[i][j] = 2; //将找到的岛的点标记为2，以防止重复搜索
-                    qlen = queue.push([i, j]); //排队等待搜查
-                    while (qlen != 0); //若全搜查完毕就跳出循环
-                    {
-                        let check = queue.shift(); //取出排在最前面的点
-                        qlen--
-                        let x = check[0];
-                        let y = check[1]; //保存
-                        island.push(check); //放入岛的数组中
-                        for (let k = 0; k < 4; k++) {
-                            //四次循环找上下左右的邻居
-                            let nbx = x + help[k][0];
-                            let nby = y + help[k][1]; //找到邻居的坐标
-                            //判断邻居是否在水域内，且是否为岛
-                            if (
-                                nbx >= 0 &&
-                                nby >= 0 &&
-                                nbx < edge &&
-                                nby < edge &&
-                                grid[nbx][nby] === 1
-                            ) {
-                                queue.push([nbx, nby]); //如果是就让去排队等待检查
-                                qlen++
-                                grid[nbx][nby] = 2; //改变标记
-                            }
+        window.onload = function init() {
+            init_canvas()
+        }
+
+
+        function init_canvas() {
+            // 初始化数据
+            canvas.style.backgroundColor = targetColor;
+            let originPositions = [];
+            for (let i = 0; i < landSize; i++) {
+                let randomx = parseInt(Math.random() * dataWidth)
+                let randomy = parseInt(Math.random() * dataWidth)
+                //  生成源点
+                grid[randomx][randomy] = 1;
+                originPositions.push([randomx, randomy]);
+            }
+            // initRender(grid,targetColor);  // 将所有点设置为被搜索的点
+            ctx.beginPath();
+            renderGrid(originPositions, originColor);
+            ctx.save();
+            wideSearch(originPositions)
+        }
+
+        function wideSearch(originPositions) {
+            // let distance = -1;
+            let queen = originPositions; // 待搜索队列
+            let searchWidth = grid.length; // 搜索范围
+
+            if (!queen.length || queen.length === searchWidth * searchWidth) {
+                return -1;
+            }
+
+            let timer = setInterval(function () {
+                let nextPosition = []; // 存储接下来将要渲染的结点位置 i j
+                // 如果队列有结点
+                if (queen.length) {
+                    let pointLen = queen.length;
+                    for (let i = 0; i < pointLen; i++) {
+                        let position = queen.shift();
+                        let x = position[0]; // 被搜索结点的横坐标
+                        let y = position[1]; // 被搜索结点的纵坐标
+                        // 向左搜索
+                        if (x > 0 && grid[x - 1][y] === 0) {
+                            queen.push([x - 1, y])
+                            grid[x - 1][y] = 2;
+                        }
+                        //向右搜索
+                        if (x < searchWidth - 1 && grid[x + 1][y] === 0) {
+                            queen.push([x + 1, y])
+                            grid[x + 1][y] = 2;
+                        }
+                        //向下搜索
+                        if (y < searchWidth - 1 && grid[x][y + 1] === 0) {
+                            queen.push([x, y + 1])
+                            grid[x][y + 1] = 2;
+                        }
+                        //向上搜索
+                        if (y > 0 && grid[x][y - 1] === 0) {
+                            queen.push([x, y - 1])
+                            grid[x][y - 1] = 2;
                         }
                     }
-
-
-
-
-
-                    // grid[i][j] = 2; //将找到的岛的点标记为2，以防止重复搜索
-                    // qlen = queue.push([i, j]); //排队等待搜查
-                    // while (qlen != 0); //若全搜查完毕就跳出循环
-                    // {
-                    //     let check = queue.shift(); //取出排在最前面的点
-                    //     qlen--
-                    //     let x = check[0];
-                    //     let y = check[1]; //保存
-                    //     island.push(check); //放入岛的数组中
-                    //     for (let k = 0; k < 4; k++) {
-                    //         //四次循环找上下左右的邻居
-                    //         let nbx = x + help[k][0];
-                    //         let nby = y + help[k][1]; //找到邻居的坐标
-                    //         //判断邻居是否在水域内，且是否为岛
-                    //         if (
-                    //             nbx >= 0 &&
-                    //             nby >= 0 &&
-                    //             nbx < edge &&
-                    //             nby < edge &&
-                    //             grid[nbx][nby] === 1
-                    //         ) {
-                    //             queue.push([nbx, nby]); //如果是就让去排队等待检查
-                    //             qlen++
-                    //             grid[nbx][nby] = 2; //改变标记
-                    //         }
-                    //     }
-                    // }
-                    for (let n of island) {
-                        queue.push(n); //将岛的所有点都放入队列中
-                    }
-                    while (queue.length != 0) {
-                        //开始第二次广度优先搜索
-                        //在每一轮的扩张中队列的长度是不变的，新增的点需要在下一轮扩张中被检查
-                        let qlen = queue.length;
-                        for (let k = 0; k < qlen; k++) {
-                            //每一轮扩张
-                            let check = queue.shift();
-                            let x = check[0];
-                            let y = check[1];
-                            for (let l = 0; l < 4; l++) {
-                                //四次循环找上下左右的邻居
-                                let nbx = x + help[l][0];
-                                let nby = y + help[l][1];
-                                if (nbx >= 0 && nby >= 0 && nbx < edge && nby < edge) {
-                                    if (grid[nbx][nby] === 1) {
-                                        //如果找到岛，直接返回次数
-                                        console.log(step + "===")
-                                        return step;
-                                    } else if (grid[nbx][nby] === 0) {
-                                        //如果是水域，就将它划入岛的范围内
-                                        queue.push([nbx, nby]);
-                                        grid[nbx][nby] = 2;
-                                    }
-                                }
-                            }
-                        }
-                        step++; //每一轮扩张结束后步数加一
-                    }
+                    // 渲染
+                    renderGrid(queen, visitedColor);
+                } else {
+                    clearInterval(timer)
                 }
+            }, interval)
+        };
+
+        // 渲染访问点
+        function renderGrid(positionList, color) {
+            let len = grid.length;
+            for (let i = 0; i < positionList.length; i++) {
+                let [x, y] = positionList[i];
+                ctx.beginPath();
+                ctx.moveTo(y * grid_width, x * grid_width);
+                ctx.rect(y * grid_width, x * grid_width, grid_width, grid_width);
+                ctx.fillStyle = color;
+                ctx.fill()
+                ctx.save()
             }
         }
-    };
+    </script>
 
-    shortestBridge(
-        [
-            [0, 1, 0],
-            [0, 0, 0],
-            [0, 0, 1]
-        ]);
-</script>
+
+</body>
+
 
 </html>

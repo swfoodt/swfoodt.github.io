@@ -1,8 +1,8 @@
 {
-  "label": "官方每日一题",
+  "label": "每日一题",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "每日一题学习"
+    "description": "在刷leetcode的过程中记录下来的一些有趣思路和想法"
   }
 }
