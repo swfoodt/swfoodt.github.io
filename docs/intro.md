@@ -28,14 +28,6 @@ title: 这里有些什么
 
 :::
 
-<!-- ```
-- 废物合肥人
-- 二号位日日
-- 无法抗拒日日
-  - 好的 u 热负荷
-```
+## 算法浅学记录
 
-[baidu](/docs/tutorial-basics/create-a-page)
-
-![1.png](../static/img/Cylogo.png)
-[![vHB34g.png](https://s1.ax1x.com/2022/09/07/vHB34g.png)](https://imgse.com/i/vHB34g) -->
+尽可能在闲时刷一刷 LeetCode，记录一些刷题过程中的有趣的思想
