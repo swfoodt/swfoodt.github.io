@@ -9,14 +9,14 @@
     <icon>https://swfoodt.netlify.app/img/Cylogo.png</icon>
     <entry>
         <title type="html"><![CDATA[welcome]]></title>
-        <id>/2021/08/26/welcome</id>
+        <id>https://swfoodt.netlify.app/blog/2021/08/26/welcome</id>
         <link href="https://swfoodt.netlify.app/blog/2021/08/26/welcome"/>
         <updated>2021-08-26T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[<!-- ---]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[first-blog-post]]></title>
-        <id>/2019/05/28/first-blog-post</id>
+        <id>https://swfoodt.netlify.app/blog/2019/05/28/first-blog-post</id>
         <link href="https://swfoodt.netlify.app/blog/2019/05/28/first-blog-post"/>
         <updated>2019-05-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[<!-- ---]]></summary>
